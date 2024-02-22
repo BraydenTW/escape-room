@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNLOCK HANDCUFFS</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 450px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #bbb;
+        }
+        b {
+            color: white;
+        }
+
+        input {
+            font-weight: 900;
+            background: black;
+            color: white;
+            width: 100px;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        input,
+        button {
+
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: grey;
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        select {
+            background: black;
+            padding: 6px;
+            color: white;
+            font-size: 20px;
+            border-radius: 8px;
+        }
+
+        span {
+            opacity: 0%;
+        }
+
+
+
+        #list {
+            display: block;
+        }
+        #dialog {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    Puzzle 2 - Call the Right Gaurd
+    <div id="list">
+        <select id="gaurds">
+            <option>Phineas</option>
+            <option>Bob</option>
+            <option>Lucy</option>
+            <option>Daniel</option>
+            <option>Job</option>
+            <option>Torsten</option>
+            <option>Johnny</option>
+            <option>Dobbes</option>
+            <option>Brayden</option>
+            <option>Linus</option>
+            <option>Professor Snape</option>
+            <option>Harry Potter</option>
+            <option>Hobby</option>
+            <option>Dan</option>
+            <option>Cinderella</option>
+            <option>Don</option>
+            <option>Marley</option>
+            <option>Barry</option>
+            <option>Dom</option>
+            <option>George Washington</option>
+            <option>Larry</option>
+            <option>Cool person</option>
+            <option>Happy person</option>
+            <option>Tim</option>
+        </select>
+
+        <button id="talkto">Talk to</button>
+        
+    </div>
+    <div id="dialog">
+        <p id="dialog-text">"Don't talk to me, prisoner! Why would I help you?"</p>
+        <button id="goback">Go back to names</button>
+    </div>
+    <script>
+        document.querySelector("#list").style.display = "flex"
+        document.querySelector("#talkto").addEventListener("click", () => {
+            document.querySelector("#list").style.display = "none"
+            document.querySelector("#dialog").style.display = "flex"
+                document.querySelector("#dialog-text").textContent = "Gaurd " + document.querySelector("#gaurds").value + ` says, "Don't talk to me, prisoner! Why would I help you?"`
+            if (document.querySelector("#gaurds").value === "Marley") {
+                document.querySelector("#dialog-text").innerHTML = "Double Agent Marley tells you all the information he knows. <b>He knows the plans are in the “Mojyl Xojyl Ypcf-Chunil Jfuhm Liig,” but he knows that's the encoded name for the room.</b> The only other thing he knows is that the room is on the <b>right</b>, and that his name's <b>shiftiness</b> holds the power to find the room."
+
+            }
+        })
+        document.querySelector("#goback").addEventListener("click", () => {
+            document.querySelector("#list").style.display = "flex"
+            document.querySelector("#dialog").style.display = "none"
+        })
+    </script>
+</body>
+
+</html>
